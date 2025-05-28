@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>English Tenses Quiz</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        background: linear-gradient(135deg, #667eea, #764ba2);
+        color: #fff;
+        margin: 0;
+        padding: 0;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+      }
+
+      .container {
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 12px;
+        padding: 30px 40px;
+        max-width: 700px;
+        width: 100%;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        /* backdrop-filter: blur(10px); */
+        background-color: rgba(255, 255, 255, 0.15);
+      }
+
+      h1 {
+        font-weight: 600;
+        font-size: 2.5rem;
+        text-align: center;
+        margin-bottom: 10px;
+        letter-spacing: 1px;
+      }
+
+      p.instructions {
+        text-align: center;
+        font-size: 1.1rem;
+        margin-bottom: 30px;
+        color: #d5d5f7;
+      }
+
+      .question {
+        margin-bottom: 25px;
+        padding-bottom: 15px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      }
+
+      .question h3 {
+        font-weight: 600;
+        font-size: 1.2rem;
+        margin-bottom: 12px;
+      }
+
+      .options {
+        display: flex;
+        flex-direction: column;
+      }
+
+      label {
+        background: rgba(255, 255, 255, 0.15);
+        padding: 12px 18px;
+        margin-bottom: 10px;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.15s ease;
+        user-select: none;
+        display: flex;
+        align-items: center;
+        color: #fff;
+        font-weight: 500;
+        transition: background-color 0.4s ease, color 0.4s ease,
+          font-weight 0.3s ease;
+      }
+
+      label:hover {
+        background: rgba(255, 255, 255, 0.3);
+        transform: translateX(5px);
+      }
+
+      input[type="radio"] {
+        margin-right: 15px;
+        accent-color: #764ba2;
+        cursor: pointer;
+        transform: scale(1.3);
+      }
+
+      button#submit-btn,
+      button#back-btn {
+        width: 100%;
+        border: none;
+        padding: 15px 0;
+        font-size: 1.2rem;
+        font-weight: 600;
+        border-radius: 10px;
+        color: white;
+        cursor: pointer;
+        box-shadow: 0 4px 10px #ff4a4a;
+        transition: background-color 0.3s ease;
+        margin-top: 10px;
+      }
+
+      button#submit-btn {
+        background: #ff6363;
+      }
+
+      button#submit-btn:hover {
+        background: #e94b4b;
+      }
+
+      button#back-btn {
+        background: #4a90e2;
+        box-shadow: 0 4px 10px #357abd;
+      }
+
+      button#back-btn:hover {
+        background: #357abd;
+      }
+
+      .result {
+        margin-top: 25px;
+        font-size: 1.4rem;
+        font-weight: 700;
+        text-align: center;
+        padding: 15px;
+        border-radius: 10px;
+        background: rgba(0, 0, 0, 0.3);
+        box-shadow: inset 0 0 8px #fff;
+        color: white;
+      }
+
+      @media (max-width: 600px) {
+        .container {
+          padding: 25px 25px;
+        }
+        h1 {
+          font-size: 2rem;
+        }
+        button#submit-btn,
+        button#back-btn {
+          font-size: 1rem;
+          padding: 12px 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>English Tenses Quiz</h1>
+      <p class="instructions">
+        Select the correct tense form to complete each sentence.
+      </p>
+
+      <form id="quiz-form">
+        <!-- Simple Present Tense -->
+        <div class="question" data-answer="goes">
+          <h3>1. She _____ to school every day.</h3>
+          <div class="options">
+            <label
+              ><input type="radio" name="q1" value="go" required /> go</label
+            >
+            <label><input type="radio" name="q1" value="goes" /> goes</label>
+            <label><input type="radio" name="q1" value="going" /> going</label>
+            <label><input type="radio" name="q1" value="gone" /> gone</label>
+          </div>
+        </div>
+
+        <!-- Simple Past Tense -->
+        <div class="question" data-answer="went">
+          <h3>2. She _____ to the store yesterday.</h3>
+          <div class="options">
+            <label
+              ><input type="radio" name="q2" value="go" required /> go</label
+            >
+            <label><input type="radio" name="q2" value="went" /> went</label>
+            <label><input type="radio" name="q2" value="gone" /> gone</label>
+            <label><input type="radio" name="q2" value="going" /> going</label>
+          </div>
+        </div>
+
+        <!-- Future Tense -->
+        <div class="question" data-answer="will visit">
+          <h3>3. They _____ their grandparents next month.</h3>
+          <div class="options">
+            <label
+              ><input type="radio" name="q3" value="visit" required />
+              visit</label
+            >
+            <label
+              ><input type="radio" name="q3" value="will visit" /> will
+              visit</label
+            >
+            <label
+              ><input type="radio" name="q3" value="visited" /> visited</label
+            >
+            <label
+              ><input type="radio" name="q3" value="visiting" /> visiting</label
+            >
+          </div>
+        </div>
+
+        <!-- Present Continuous -->
+        <div class="question" data-answer="is running">
+          <h3>4. He _____ in the park right now.</h3>
+          <div class="options">
+            <label
+              ><input type="radio" name="q4" value="runs" required />
+              runs</label
+            >
+            <label
+              ><input type="radio" name="q4" value="is running" /> is
+              running</label
+            >
+            <label><input type="radio" name="q4" value="ran" /> ran</label>
+            <label
+              ><input type="radio" name="q4" value="running" /> running</label
+            >
+          </div>
+        </div>
+
+        <!-- Simple Present Tense -->
+        <div class="question" data-answer="doesn't like">
+          <h3>5. She _____ coffee.</h3>
+          <div class="options">
+            <label
+              ><input type="radio" name="q5" value="don't like" required />
+              don't like</label
+            >
+            <label
+              ><input type="radio" name="q5" value="doesn't like" /> doesn't
+              like</label
+            >
+            <label><input type="radio" name="q5" value="likes" /> likes</label>
+            <label
+              ><input type="radio" name="q5" value="liking" /> liking</label
+            >
+          </div>
+        </div>
+
+        <!-- Simple Past Tense -->
+        <div class="question" data-answer="didn't go">
+          <h3>6. They _____ to the party last night.</h3>
+          <div class="options">
+            <label
+              ><input type="radio" name="q6" value="didn't went" required />
+              didn't went</label
+            >
+            <label
+              ><input type="radio" name="q6" value="didn't go" /> didn't
+              go</label
+            >
+            <label
+              ><input type="radio" name="q6" value="don't go" /> don't go</label
+            >
+            <label
+              ><input type="radio" name="q6" value="didn't gone" /> didn't
+              gone</label
+            >
+          </div>
+        </div>
+
+        <!-- Future Tense -->
+        <div class="question" data-answer="will be">
+          <h3>7. She _____ at the office tomorrow.</h3>
+          <div class="options">
+            <label
+              ><input type="radio" name="q7" value="is" required /> is</label
+            >
+            <label
+              ><input type="radio" name="q7" value="will be" /> will be</label
+            >
+            <label><input type="radio" name="q7" value="was" /> was</label>
+            <label><input type="radio" name="q7" value="being" /> being</label>
+          </div>
+        </div>
+
+        <!-- Present Continuous -->
+        <div class="question" data-answer="are studying">
+          <h3>8. We _____ English at the moment.</h3>
+          <div class="options">
+            <label
+              ><input type="radio" name="q8" value="study" required />
+              study</label
+            >
+            <label
+              ><input type="radio" name="q8" value="studying" /> studying</label
+            >
+            <label
+              ><input type="radio" name="q8" value="are studying" /> are
+              studying</label
+            >
+            <label
+              ><input type="radio" name="q8" value="studies" /> studies</label
+            >
+          </div>
+        </div>
+
+        <button type="submit" id="submit-btn">Submit Answers</button>
+        <button type="button" id="back-btn">Back to Main Menu</button>
+      </form>
+
+      <div id="result" class="result" style="display: none"></div>
+    </div>
+
+    <script>
+      const quizForm = document.getElementById("quiz-form");
+      const resultDiv = document.getElementById("result");
+      const backBtn = document.getElementById("back-btn");
+
+      quizForm.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        const questions = document.querySelectorAll(".question");
+        let score = 0;
+        const total = questions.length;
+
+        resultDiv.innerHTML = "";
+        resultDiv.style.display = "block";
+
+        questions.forEach((question, index) => {
+          const answer = question.getAttribute("data-answer");
+          const selectedInput = question.querySelector(
+            'input[name="q' + (index + 1) + '"]:checked'
+          );
+          const selected = selectedInput ? selectedInput.value : null;
+
+          const options = question.querySelectorAll("label");
+          options.forEach((label) => {
+            const input = label.querySelector("input");
+            label.style.backgroundColor = "";
+            label.style.color = "#fff";
+            label.style.fontWeight = "500";
+
+            if (input.value === answer) {
+              label.style.backgroundColor = "#a5ff90";
+              label.style.color = "#1f3500";
+              label.style.fontWeight = "700";
+            }
+            if (input.checked && input.value !== answer) {
+              label.style.backgroundColor = "#ff6b6b";
+              label.style.color = "#500000";
+              label.style.fontWeight = "700";
+            }
+          });
+
+          if (selected === answer) {
+            score++;
+          }
+        });
+
+        resultDiv.innerHTML = `You scored <strong>${score} / ${total}</strong> correct answers!`;
+        requestAnimationFrame(() => {
+          resultDiv.scrollIntoView({ behavior: "smooth" });
+        });
+      });
+
+      backBtn.addEventListener("click", () => {
+        window.location.href = "index.html"; // Ganti ini
+      });
+    </script>
+  </body>
+</html>
